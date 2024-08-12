@@ -1,7 +1,10 @@
-// Módulos de dependências:
+// Dependências:
 import { Router } from "express";
 
 // Módulos de controle:
+import { 
+  addSpeaker, getAllSpeakers 
+} from "../controllers/speakerController.js"
 
 // Módulos auxiliares (Middleware):
 
@@ -9,7 +12,7 @@ import { Router } from "express";
 const router = Router();
 
 // Endpoints:
-router.post("/");
-router.get("/");
+router.post("/", addSpeaker);
+router.get("/", getAllSpeakers);
 
 export default router;
