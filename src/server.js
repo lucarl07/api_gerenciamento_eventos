@@ -11,9 +11,6 @@ import "dotenv/config";
 import express from "express";
 import path from "node:path";
 
-// Importação de modelos de dados (entidades):
-import "./models/speakerModel.js";
-
 // Importação de roteadores:
 import speakerRouter from "./routes/speakerRoutes.js";
 
