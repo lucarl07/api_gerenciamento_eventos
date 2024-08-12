@@ -1,0 +1,152 @@
+{
+	"info": {
+		"_postman_id": "dd4ec355-b0ad-44a5-a14e-d46c0d058b16",
+		"name": "Conference+",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37199521"
+	},
+	"item": [
+		{
+			"name": "Palestrantes",
+			"item": [
+				{
+					"name": "Adicionar um novo palestrante",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Luiz Carlos\",\r\n    \"expertise\": \"Desenvolvimento Web\",\r\n    \"dt_nascimento\": \"2007-01-24\",\r\n    \"cpf\": \"000.000.000-00\",\r\n    \"email\": \"luiz.dev@email.com\",\r\n    \"senha\": \"123123123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/eventos/palestrantes",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"eventos",
+								"palestrantes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pesquisar por todos os palestrantes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/eventos/palestrantes",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"eventos",
+								"palestrantes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rota Geral",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}",
+					"host": [
+						"{{baseURL}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Resposta Esperada (404)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}",
+							"host": [
+								"{{baseURL}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "98"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"62-lIS4rr3Y/pZ7KkNTCOFXccwiEGo\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 12 Aug 2024 12:08:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Rota não encontrada.\",\n    \"tip\": \"Certifique-se de que você digitou a URL corretamente.\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:5050",
+			"type": "string"
+		}
+	]
+}
