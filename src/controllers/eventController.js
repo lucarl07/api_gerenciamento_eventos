@@ -1,6 +1,7 @@
 import conn from "../config/conn.js";
 import { v4 as uuidv4 } from "uuid";
 
+// Adicionar um novo evento
 export const addEvent = (req, res) => {
   const { titulo, data: dataEvento, horario, palestrantes_id } = req.body;
 
@@ -51,4 +52,5 @@ export const addEvent = (req, res) => {
   })
 }
 
+// Pesquisar por todos os eventos:
 export const getAllEvents = (req, res) => {}
