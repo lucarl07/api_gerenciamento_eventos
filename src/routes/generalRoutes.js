@@ -2,10 +2,8 @@
 import { Router } from "express";
 
 // Módulos de controle:
-import {
-  addSpeaker,
-  getAllSpeakers,
-} from "../controllers/speakerController.js";
+import { addEvent, getAllEvents } from "../controllers/eventController.js";
+import { addSpeaker, getAllSpeakers } from "../controllers/speakerController.js";
 
 // Módulos auxiliares (Middleware):
 import validateNewSpeaker from "../middleware/validateNewSpeaker.js";
@@ -14,8 +12,8 @@ import validateNewSpeaker from "../middleware/validateNewSpeaker.js";
 const router = Router();
 
 // Endpoints | Eventos:
-router.post("/criar")
-router.get("/agenda")
+router.post("/criar", addEvent)
+router.get("/agenda", getAllEvents)
 
 // Endpoints | Palestrantes:
 router.post("/palestrantes", validateNewSpeaker, addSpeaker);
