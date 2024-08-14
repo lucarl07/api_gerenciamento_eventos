@@ -13,8 +13,12 @@ import validateNewSpeaker from "../middleware/validateNewSpeaker.js";
 // Inicializando o roteador:
 const router = Router();
 
-// Endpoints:
-router.post("/", validateNewSpeaker, addSpeaker);
-router.get("/", getAllSpeakers);
+// Endpoints | Eventos:
+router.post("/criar")
+router.get("/agenda")
+
+// Endpoints | Palestrantes:
+router.post("/palestrantes", validateNewSpeaker, addSpeaker);
+router.get("/palestrantes", getAllSpeakers);
 
 export default router;

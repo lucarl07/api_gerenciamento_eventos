@@ -12,7 +12,7 @@ import express from "express";
 import path from "node:path";
 
 // Importação de roteadores:
-import speakerRouter from "./routes/speakerRoutes.js";
+import generalRouter from "./routes/generalRoutes.js";
 
 // Gerando constantes do servidor:
 const PORT = process.env.PORT;
@@ -31,7 +31,7 @@ app.listen(PORT, () => {
 });
 
 // Rotas utilizadas:
-app.use("/eventos/palestrantes", speakerRouter);
+app.use("/eventos", generalRouter);
 
 // Rota não encontrada:
 app.use((request, response) => {
