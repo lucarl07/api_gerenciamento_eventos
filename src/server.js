@@ -1,7 +1,7 @@
 /** CONFERENCE+ API - Por: Luiz Carlos dos Santos Júnior
  *
  * Aplicação desenvolvida com Express.js para a avaliação
- * de Interação com APIs, que ocorrerá dos dias 12/08/2024
+ * de Desenvolvimento de APIs, que ocorrerá dos dias 12/08/2024
  * à 16/08/2024.
  *
  **/
