@@ -57,6 +57,40 @@
 			]
 		},
 		{
+			"name": "Eventos",
+			"item": [
+				{
+					"name": "Adicionar um novo evento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\": \"Testando\",\r\n    \"data\": \"2024-08-14\",\r\n    \"horario\": \"12:00:00\",\r\n    \"palestrantes_id\": [\r\n        \"1688b1f1-f50e-4340-b01f-da722cccd07c\",\r\n        \"a7be5362-d427-4adb-a78b-9b1971a5d27d\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5050/eventos/criar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"eventos",
+								"criar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Rota Geral",
 			"request": {
 				"method": "GET",
