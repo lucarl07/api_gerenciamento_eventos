@@ -1,6 +1,6 @@
 import conn from "../config/conn.js";
 import { v4 as uuidv4 } from "uuid";
 
-export const addEvent = () => {}
+export const addEvent = (req, res) => {}
 
-export const getAllEvents = () => {}
+export const getAllEvents = (req, res) => {}
