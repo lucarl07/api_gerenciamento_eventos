@@ -66,7 +66,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"titulo\": \"Testando\",\r\n    \"data\": \"2024-08-14\",\r\n    \"horario\": \"12:00:00\",\r\n    \"palestrantes_id\": [\r\n        \"1688b1f1-f50e-4340-b01f-da722cccd07c\",\r\n        \"a7be5362-d427-4adb-a78b-9b1971a5d27d\"\r\n    ]\r\n}",
+							"raw": "{\r\n    \"titulo\": \"O que aprendi implementando UI/UX nas empresas\",\r\n    \"data\": \"2024-08-16\",\r\n    \"horario\": \"16:30:00\",\r\n    \"palestrantes_id\": [\r\n        \"1688b1f1-f50e-4340-b01f-da722cccd07c\",\r\n        \"a7be5362-d427-4adb-a78b-9b1971a5d27d\"\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -74,15 +74,64 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5050/eventos/criar",
-							"protocol": "http",
+							"raw": "{{baseURL}}/eventos/criar",
 							"host": [
-								"localhost"
+								"{{baseURL}}"
 							],
-							"port": "5050",
 							"path": [
 								"eventos",
 								"criar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pesquisar por todos os eventos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/eventos/agenda",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"eventos",
+								"agenda"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Participantes",
+			"item": [
+				{
+					"name": "Adicionar um novo participante",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Pelé Firmino de Neymar Jr.\",\r\n    \"dt_nascimento\": \"2014-07-08\",\r\n    \"email\": \"pele_construcoes@email.com\",\r\n    \"senha\": \"bomdiavietnaaaaaam\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/eventos/participantes/registrar",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"eventos",
+								"participantes",
+								"registrar"
 							]
 						}
 					},
