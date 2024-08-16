@@ -66,7 +66,7 @@ export const addEvent = (req, res) => {
               })
             }
   
-            res.status(200).json({
+            res.status(201).json({
               message: "Evento adicionado com sucesso!"
             })
           })
