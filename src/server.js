@@ -9,7 +9,6 @@
 // Dependências:
 import "dotenv/config";
 import express from "express";
-import path from "node:path";
 
 // Importação de roteadores:
 import generalRouter from "./routes/generalRoutes.js";
