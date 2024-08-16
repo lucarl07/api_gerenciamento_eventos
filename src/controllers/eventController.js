@@ -77,4 +77,52 @@ export const addEvent = (req, res) => {
 }
 
 // Pesquisar por todos os eventos (com detalhes dos palestrantes):
-export const getAllEvents = (req, res) => {}
+export const getAllEvents = (req, res) => {
+  const selectSQL = {
+    s: /*sql*/ `SELECT ?? FROM eventos`,
+    v: [["evento_id", "titulo", "data", "horario"]]
+  }
+
+  conn.query(selectSQL['s'], selectSQL['v'], (err, data) => {
+    if (err) {
+      console.log(err)
+      return res.status(500).json({
+        err: "Erro interno ao buscar os eventos.",
+        tip: "Tente novamente mais tarde."
+      })
+    }
+
+    const eventList = data
+    
+    const parsedEventList = eventList.map((event) => {
+      const getSpeakersSQL = {
+        s: /*sql*/ `
+          SELECT PA.palestrante_id, PA.nome, PA.expertise
+          FROM eventos AS E
+          LEFT JOIN 
+            presenca_palestrantes AS PP
+            ON E.evento_id = PP.evento_id
+          LEFT JOIN
+            palestrantes AS PA
+            ON PP.palestrante_id = PA.palestrante_id
+          WHERE ?? = ?
+        `,
+        v: ["E.evento_id", event.evento_id]
+      }
+
+      conn.promise().query(getSpeakersSQL['s'], getSpeakersSQL['v'], (_err, _data) => {
+        if (_err) {
+          console.log(_err)
+          return res.status(500).json({
+            err: "Erro interno ao buscar os eventos.",
+            tip: "Tente novamente mais tarde."
+          })
+        } 
+
+        return _data
+      })
+    })
+
+    res.status(200).json(parsedEventList)
+  })
+}
